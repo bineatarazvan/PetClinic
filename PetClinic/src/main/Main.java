@@ -55,7 +55,7 @@ public class Main extends Application {
 			try {
 				BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("/controllers/MainView.fxml"));
 				Scene scene = new Scene(root,800,800);
-				scene.getStylesheets().add(getClass().getResource("/controllers/application.css").toExternalForm());
+				//scene.getStylesheets().add(getClass().getResource("/controllers/application.css").toExternalForm());
 				primaryStage.setScene(scene);
 				primaryStage.show();
 			} catch(Exception e) {
@@ -74,14 +74,14 @@ public class Main extends Application {
 			Appointment a = new Appointment();
 			Doctor d = new Doctor();
 			
-			bob.setIdAnimal(1);
+			bob.setIdAnimal(2);
 			bob.setName("Bob");
 			
-			d.setIdDoctor(1);
+			d.setIdDoctor(2);
 			d.setName("Dr. DoLitlle");		
 			List<Appointment> bobsAppointment = new ArrayList<>();
 			
-			a.setIdAppointment(1);
+			a.setIdappointment(2);
 			a.setAnimal(bob);
 			a.setDoctor(d);
 			a.setType("Consultanta");	
@@ -99,9 +99,11 @@ public class Main extends Application {
 				e.printStackTrace();
 			}
 			dbUtil.startTransaction();
-			dbUtil.saveDoctor(d);
+			
 			dbUtil.saveAnimal(bob);
+			dbUtil.saveDoctor(d);
 			dbUtil.saveAppointment(a);
+			
 			dbUtil.commitTransaction();
 			for(Animal animal: dbUtil.getAllAnimals()) {
 			System.out.println("Animal name:" + animal.getName());

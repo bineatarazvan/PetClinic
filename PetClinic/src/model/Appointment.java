@@ -1,14 +1,8 @@
 package model;
 
 import java.io.Serializable;
+import javax.persistence.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.NamedQuery;
 
 /**
  * The persistent class for the appointment database table.
@@ -17,12 +11,11 @@ import javax.persistence.NamedQuery;
 @Entity
 @NamedQuery(name="Appointment.findAll", query="SELECT a FROM Appointment a")
 public class Appointment implements Serializable {
-	
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int idAppointment;
+	private int idappointment;
 
 	private String type;
 
@@ -39,12 +32,12 @@ public class Appointment implements Serializable {
 	public Appointment() {
 	}
 
-	public int getIdAppointment() {
-		return this.idAppointment;
+	public int getIdappointment() {
+		return this.idappointment;
 	}
 
-	public void setIdAppointment(int idAppointment) {
-		this.idAppointment = idAppointment;
+	public void setIdappointment(int idappointment) {
+		this.idappointment = idappointment;
 	}
 
 	public String getType() {

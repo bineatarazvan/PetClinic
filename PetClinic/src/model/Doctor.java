@@ -1,7 +1,6 @@
 package model;
 
 import java.io.Serializable;
-
 import javax.persistence.*;
 import java.util.List;
 
@@ -32,7 +31,7 @@ public class Doctor implements Serializable {
 		return this.idDoctor;
 	}
 
-	public void setIdDoctor(int iddoctor) {
+	public void setIdDoctor(int idDoctor) {
 		this.idDoctor = idDoctor;
 	}
 

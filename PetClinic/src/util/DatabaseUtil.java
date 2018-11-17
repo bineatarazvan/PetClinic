@@ -18,7 +18,7 @@ public class DatabaseUtil {
 	 * This is the setUp method
 	 */
 	public void setup()  {
-		entityManagerFactory = Persistence.createEntityManagerFactory("veterinaryclinic");
+		entityManagerFactory = Persistence.createEntityManagerFactory("PetClinic");
 		entityManager = entityManagerFactory.createEntityManager();
 	}
 
